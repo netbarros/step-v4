@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--
+Author: Fabiano Barros
+Product FrameWork: Metronic - Bootstrap 5 HTML, VueJS, React, Angular & Laravel Admin Dashboard Theme
+Website: http://www.step.eco.br
+Contact: dev@grupoep.com.br
+
+License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
+-->
+<html lang="pt-br">
+<!--begin::Head-->
+
+<head>
+    <base href="">
+    <title>STEP 2022</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="STEP 2022" />
+    <meta name="keywords" content="STEP 2022, Iot, Grupo EP" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="STEP 2022" />
+    <meta property="og:url" content="https://step.eco.br.com" />
+    <meta property="og:site_name" content="STEP 2022" />
+    <link rel="canonical" href="https://grupoep.com.br/eptech" />
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/cookiealert/cookiealert.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
+    <noscript>
+        <p>Javascript DESABILITADO no navegador!</p>
+        <meta http-equiv="refresh" content="2; https://support.google.com/adsense/answer/12654?hl=pt-BR">
+      </noscript>
+    
+    <script type="text/javascript">
+"use strict";
+//var browser = chrome || browser;
+window.addEventListener('touchstart', function() {
+
+
+
+    const UA = navigator.userAgent;
+const isWebkit =
+  /\b(iPad|iPhone|iPod)\b/.test(UA) &&
+  /WebKit/.test(UA) &&
+  !/Edge/.test(UA) &&
+  !window.MSStream;
+
+let mediaQueryUpdated = true;
+const mqL = [];
+
+function whenMediaChanges() {
+  mediaQueryUpdated = true;
+}
+
+const listenToMediaQuery = isWebkit
+  ? (mQ, f) => {
+      if (/height|width/.test(mQ.media)) {
+        mqL.push([mQ, f]);
+      }
+      mQ.addListener(f);
+      mQ.addListener(whenMediaChanges);
+    }
+  : () => {};
+
+const destroyMediaQuery = isWebkit
+  ? (mQ) => {
+      for (let i = 0; i < mqL.length; i++) {
+        if (mqL[i][0] === mQ) {
+          mqL.splice(i, 1);
+        }
+      }
+      mQ.removeListener(whenMediaChanges);
+    }
+  : listenToMediaQuery;
+
+let orientationChanged = false;
+addEventListener(
+  "orientationchange",
+  () => {
+    orientationChanged = true;
+  },
+  PASSIVE_LISTENER_OPTION
+);
+
+addEventListener("resize", () =>
+  setTimeout(() => {
+    if (orientationChanged && !mediaQueryUpdated) {
+      for (let i = 0; i < mqL.length; i++) {
+        mqL[i][1](mqL[i][0]);
+      }
+    }
+    mediaQueryUpdated = orientationChanged = false;
+  }, 0)
+);
+
+    // some logic
+}, {passive:false}); // <-- mark the event listerner as NOT passive
+
+
+
+ 
+        
+              </script>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="bg-body">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Authentication - Sign-in -->
+        <div
+            class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+
+            <!--begin::Content-->
+            <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20" id="div_conteudo_principal">
+                <!--begin::Logo-->
+                <a href="index.html" class="mb-12">
+                    <img alt="Logo" src="assets/media/logos/logo-4-sm.png" class="h-40px" />
+                </a>
+                <!--end::Logo-->
+                <!--begin::Wrapper-->
+                <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                    <!--begin::Form-->
+                    <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+                        <!--begin::Heading-->
+                        <div class="text-center mb-10">
+                            <!--begin::Title-->
+                            <h1 class="text-dark mb-3">OPERAÇÕES</h1>
+                            <!--end::Title-->
+                            <!--   begin::Link-
+                            <div class="text-gray-400 fw-bold fs-4">Novo por Aqui?
+                                <a href="authentication/layouts/dark/sign-up.php" class="link-primary fw-bolder">Solicitar Acesso</a>
+                            </div>
+                            end::Link-->
+                        </div>
+                        <!--begin::Heading-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-10">
+                            <!--begin::Label-->
+                            <label class="form-label fs-6 fw-bolder text-dark">Email</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-lg form-control-solid" type="text" name="email"
+                                id="email" autocomplete="off" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-10">
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-stack mb-2">
+                                <!--begin::Label-->
+                                <label class="form-label fw-bolder text-dark fs-6 mb-0">Senha</label>
+                                <!--end::Label-->
+                                <!--begin::Link-->
+                                <a href="authentication/layouts/dark/password-reset.php"
+                                    class="link-primary fs-6 fw-bolder">Esqueceu a Senha?</a>
+                                <!--end::Link-->
+                            </div>
+                            <!--end::Wrapper-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-lg form-control-solid" type="password"
+                                name="password" id="password" autocomplete="off" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Actions-->
+                        <div class="text-center">
+                            <!--begin::Submit button-->
+                            <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+                                <span class="indicator-label">Continue</span>
+                                <span class="indicator-progress">Por gentileza, aguarde...
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            </button>
+                            <!--end::Submit button-->
+                            <!--begin::Separator
+                            <div class="text-center text-muted text-uppercase fw-bolder mb-5">ou</div>
+                        end::Separator
+                        
+                        begin::Google link
+                            <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+                                <img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Continue com Google</a>
+                        end::Google link-->
+                        </div>
+                        <!--end::Actions-->
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Content-->
+            <!--begin::Footer-->
+            <div class="d-flex flex-center flex-column-auto p-10">
+                <!--begin::Links-->
+                <div class="d-flex align-items-center fw-bold fs-6">
+                    <a href="https://grupoep.com.br/ep-tech/" class="text-muted text-hover-primary px-2">Sobre</a>
+                    <a href="mailto:dev@grupoep.com.br" class="text-muted text-hover-primary px-2">Suporte STEP</a>
+                    <a href="mailto:contato@grupoep.com.br" class="text-muted text-hover-primary px-2">Contato Grupo
+                        EP</a>
+                </div>
+                <!--end::Links-->
+            </div>
+            <!--end::Footer-->
+        </div>
+        <!--end::Authentication - Sign-in-->
+    </div>
+    <!--end::Root-->
+    <div class="modal fade" tabindex="-1" id="modal_cookies">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><span class="fw-bold text-primary">KTCookie:</span> Sua Importância e Como
+                        Ativa-los
+                    </h5>
+
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span class="svg-icon svg-icon-2x"></span>
+                    </div>
+                    <!--end::Close-->
+                </div>
+
+                <div class="modal-body">
+
+                    <h4 class="text-danger">Sem a liberação do Uso de KTCookie, não será possível prosseguir com o uso
+                        do
+                        Aplicativo.</h4>
+                    </br>
+                    <h5>No app do Chrome</h5>
+                    <p>
+                        No seu smartphone ou tablet Android, abra o app do Chrome .</br>
+                        No canto superior direito, toque em Mais. Configurações.</br>
+                        Toque em Configurações do site. KTCookie.</br>
+                        Ative ou desative os KTCookie.
+
+                    </p>
+
+                    <h5>No Navegador Web Chrome</h5>
+                    <p>
+                        No computador, abra o Chrome.</br>
+                        No canto superior direito, clique em Mais Maise Configurações.</br>
+                        Em "Privacidade e segurança", clique em Configurações do site.</br>
+                        Clique em KTCookie.</br>
+                        Nessa página, você pode:</br>
+                        Ativar cookies: ao lado de "Bloqueados", alterne a chave para a posição de ativação.</br>
+                        Desativar cookies: desative a opção Permitir que os sites salvem e leiam os dados de arquivos
+                        "cookies" - que armazenam
+                        temporariamente o que você visitou na rede.</p>
+
+
+                    <p>
+                        Por que os cookies são úteis:</br>
+                        Os cookies são arquivos criados pelos sites que você visita. Eles facilitam sua experiência
+                        on-line
+                        salvando informações
+                        de navegação. Com os cookies, os sites podem:
+                        </br>
+                        manter você conectado à sua conta;</br>
+                        lembrar suas preferências de site;</br>
+                        fornecer a você conteúdo localmente relevante.</br>
+                        Usamos cookies para melhorar nossos serviços.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Estou Ciente</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--begin::Cookie alert-->
+    <div class="d-flex d-lg-block flex-column bg-dark text-light text-center rounded-0 cookiealert py-5">
+        Nós Fazemos uso do armazenamento temporário de KTCookie (informações salvas em seu navegador).
+        Eles facilitam sua experiência on-line salvando informações de navegação.
+        Estamos de acordo com a LGPD.
+        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_cookies">Leia Mais</a>
+
+        <button type="button" class="btn btn-primary d-inline mx-auto ms-lg-5 acceptcookies mt-5 mt-lg-0">
+            Eu Aceito
+        </button>
+    </div>
+    <!--end::Cookie alert-->
+
+    <!--end::Main-->
+    <!--begin::Javascript-->
+    <script>
+        var hostUrl = "assets/";
+    </script>
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="assets/js/custom/authentication/sign-in/general.js"></script>
+    <script src="assets/plugins/custom/cookiealert/cookiealert.bundle.js"></script>
+    <!--end::Page Custom Javascript-->
+    <script>
+
+        window.addEventListener("cookieAlertAccept", function () {
+            console.log("Liberação Realizada com Sucesso: cookies accepted");
+
+            Swal.fire({
+                html: "Cookies Validados com sucesso!</br>Agora você poder Prosseguir!",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Ok!",
+                customClass: {
+                    confirmButton: "btn btn-primary"
+                }
+            });
+
+        });
+
+        KTCookie.remove("plcode_lido");
+
+        KTCookie.remove("estacao_atual");
+
+        KTCookie.remove("id_usuario_logado");
+
+        KTCookie.remove("status_usuario_logado");
+
+        KTCookie.remove("nivel_usuario_logado");
+
+        KTCookie.remove("email_usuario_logado");
+
+        KTCookie.remove("coordenada_GPS");
+
+
+        KTCookie.remove("latitude_user");
+
+        KTCookie.remove("longitude_user");
+
+        KTCookie.remove("nome_usuario_logado");
+
+        KTCookie.remove("CHAVE_UNICA_SESSAO_ATUAL");
+
+        KTCookie.remove("foto_usuario_logado");
+
+        KTCookie.remove("nome_PLCode_Lido");
+    </script>
+    <!--end::Javascript-->
+
+   
+</body>
+<!--end::Body-->
+
+</html>

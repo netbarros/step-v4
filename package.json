@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "blip-sdk": "^10.0.1",
+    "firebase": "^8.6.8",
+    "gulp": "^4.0.2",
+    "highcharts": "^11.1.0",
+    "jspdf": "^2.5.1",
+    "lime-transport-websocket": "^2.0.3",
+    "localforage": "^1.10.0",
+    "print-js": "^1.6.0"
+  },
+  "name": "blip",
+  "description": "STEP -  Sistema de Tratamento EP V.Lotus-4.01 #\u0000 \u0000l\u0000o\u0000t\u0000u\u0000s\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/propheta-step/lotus.git"
+  },
+  "keywords": [
+    "step"
+  ],
+  "author": "Fabiano Henrique Miranda Silva Barros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/propheta-step/lotus/issues"
+  },
+  "homepage": "https://github.com/propheta-step/lotus#readme"
+}

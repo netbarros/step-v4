@@ -1,0 +1,10 @@
+vendor/bluerhinos/phpmqtt/
+*.jpg
+*.jpg
+*.xlsx
+*.png
+arquivo-projeto/
+crud/leituras/midias_leitura/
+node_modules
+
+*.sql

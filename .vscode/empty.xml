@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="MyCustomRuleset">
+    <description>My custom PHP_CodeSniffer ruleset.</description>
+
+    <!-- Include the rules from a specific coding standard -->
+    <rule ref="PEAR" /> <!-- replace 'PEAR' with the standard you are using -->
+
+    <!-- Exclude specific rules -->
+    <rule ref="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore">
+        <severity>0</severity>
+    </rule>
+</ruleset>

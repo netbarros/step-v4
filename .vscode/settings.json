@@ -1,0 +1,22 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "intelephense.files.associations": [
+
+        "*.php",
+        "*.phtml"
+    ],
+    "phpSniffer.snippetExcludeSniffs": [],
+    "phpSniffer.run": "onType",
+    "files.associations": {
+        "*.php": "php",
+        "*.phtml": "php"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "html.format.enable": true,
+    "php.validate.executablePath": "C:/wamp64/bin/php/php8.1.13/php.exe",
+    "auto-close-tag.disableOnLanguage": [
+
+    ]
+}

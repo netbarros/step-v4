@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+Author: Fabiano Barros
+Product Name: STEP Sistema de Tratamento EP
+Purchase: https://step.eco.br
+Website: http://step.eco.br
+Contact: dev@grupoep.com.br
+Versão: 3.01
+-->
+<html lang="pt-br">
+<!--begin::Head-->
+
+<head>
+    <base href="../../">
+    <title>STEP &amp; GrupoEP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="STEP &amp; GrupoEP" />
+    <meta property="og:url" content="https://grupoep.com/eptech" />
+    <meta property="og:site_name" content="STEP | GrupoEP" />
+    <link rel="canonical" href="https://step.eco.br" />
+    <link rel="shortcut icon" href="./tema/dist/assets/media/logos/favicon.ico" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="./tema/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="./tema/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+
+<body data-kt-name="metronic" id="kt_body" class="app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
+	<!--begin::Theme mode setup on page load-->
+	<script>if (document.documentElement) {  const defaultThemeMode = "dark"; const name = document.body.getAttribute("data-kt-name"); let themeMode = localStorage.getItem("kt_" + (name !== null ? name + "_" : "") + "theme_mode_value"); if (themeMode === null) { if (defaultThemeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } else { themeMode = defaultThemeMode; } } document.documentElement.setAttribute("data-theme", themeMode); }</script>
+	<!--end::Theme mode setup on page load-->
+	<!--begin::Main-->
+	<!--begin::Root-->
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page bg image-->
+		<style>
+			body {
+				background-image: url('./tema/dist/assets/media/auth/bg4.jpg');
+			}
+
+			[data-theme="dark"] body {
+				background-image: url('./tema/dist/assets/media/auth/bg4-dark.jpg');
+			}
+		</style>
+		<!--end::Page bg image-->
+		<!--begin::Authentication - Two-stes -->
+		<div class="d-flex flex-column flex-column-fluid flex-lg-row">
+			<!--begin::Aside-->
+			<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
+				<!--begin::Aside-->
+				<div class="d-flex flex-column">
+					<!--begin::Logo-->
+					<a href="javascript:;"  class="mb-7">
+						<img alt="Logo"  src="./tema/dist/assets/media/logos/custom-3.svg" />
+					</a>
+					<!--end::Logo-->
+					<!--begin::Title-->
+					<h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
+					<!--end::Title-->
+				</div>
+				<!--begin::Aside-->
+			</div>
+			<!--begin::Aside-->
+			<!--begin::Body-->
+			<div class="d-flex flex-center w-lg-50 p-10">
+				<!--begin::Card-->
+				<div class="card rounded-3 w-md-550px">
+					<!--begin::Card body-->
+					<div class="card-body p-10 p-lg-20">
+						<!--begin::Form-->
+						<form class="form w-100 mb-13" novalidate="novalidate"
+							data-kt-redirect-url="./views/dashboard.php" id="kt_sing_in_two_steps_form">
+							<!--begin::Icon-->
+							<div class="text-center mb-10">
+								<img alt="Logo" class="mh-125px" src="./tema/dist/assets/media/svg/misc/smartphone-2.svg" />
+							</div>
+							<!--end::Icon-->
+							<!--begin::Heading-->
+							<div class="text-center mb-10">
+								<!--begin::Title-->
+								<h1 class="text-dark mb-3">Two Step Verification</h1>
+								<!--end::Title-->
+								<!--begin::Sub-title-->
+								<div class="text-muted fw-semibold fs-5 mb-5">Enter the verification code we sent to
+								</div>
+								<!--end::Sub-title-->
+								<!--begin::Mobile no-->
+								<div class="fw-bold text-dark fs-3">******7859</div>
+								<!--end::Mobile no-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Section-->
+							<div class="mb-10">
+								<!--begin::Label-->
+								<div class="fw-bold text-start text-dark fs-6 mb-1 ms-1">Type your 6 digit security code
+								</div>
+								<!--end::Label-->
+								<!--begin::Input group-->
+								<div class="d-flex flex-wrap flex-stack">
+									<input type="text" name="code_1" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+									<input type="text" name="code_2" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+									<input type="text" name="code_3" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+									<input type="text" name="code_4" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+									<input type="text" name="code_5" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+									<input type="text" name="code_6" data-inputmask="'mask': '9', 'placeholder': ''"
+										maxlength="1"
+										class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2"
+										value="" />
+								</div>
+								<!--begin::Input group-->
+							</div>
+							<!--end::Section-->
+							<!--begin::Submit-->
+							<div class="d-flex flex-center">
+								<button type="button" id="kt_sing_in_two_steps_submit"
+									class="btn btn-lg btn-primary fw-bold">
+									<span class="indicator-label">Submit</span>
+									<span class="indicator-progress">Please wait...
+										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								</button>
+							</div>
+							<!--end::Submit-->
+						</form>
+						<!--end::Form-->
+						<!--begin::Notice-->
+						<div class="text-center fw-semibold fs-5">
+							<span class="text-muted me-1">Didn’t get the code ?</span>
+							<a href="#" class="link-primary fs-5 me-1">Resend</a>
+							<span class="text-muted me-1">or</span>
+							<a href="#" class="link-primary fs-5">Call Us</a>
+						</div>
+						<!--end::Notice-->
+					</div>
+					<!--end::Card body-->
+				</div>
+				<!--end::Card-->
+			</div>
+			<!--end::Body-->
+		</div>
+		<!--end::Authentication - Two-stes-->
+	</div>
+	<!--end::Root-->
+	<!--end::Main-->
+	<!--begin::Javascript-->
+	<script>var hostUrl = "assets/";</script>
+	<!--begin::Global Javascript Bundle(used by all pages)-->
+	<script src="./tema/dist/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="./tema/dist/assets/js/scripts.bundle.js"></script>
+	<!--end::Global Javascript Bundle-->
+	<!--begin::Custom Javascript(used by this page)-->
+	<script src="./js/login/sign-in/two-steps.js"></script>
+	<!--end::Custom Javascript-->
+	<!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>

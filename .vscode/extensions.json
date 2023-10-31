@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "recca0120.vscode-phpunit",
+        "github.copilot-labs",
+        "ikappas.composer",
+        "formulahendry.auto-close-tag",
+        "akamud.vscode-theme-onedark",
+        "alefragnani.bookmarks",
+        "vincaslt.highlight-matching-tag",
+        "neilbrayfield.php-docblocker",
+        "phproberto.vscode-php-getters-setters",
+        "mehedidracula.php-namespace-resolver",
+        "emallin.phpunit",
+        "ms-ceintl.vscode-language-pack-pt-br",
+        "vscode-icons-team.vscode-icons",
+        "spywhere.guides",
+        "rifi2k.format-html-in-php",
+        "mikestead.dotenv",
+        "formulahendry.code-runner",
+        "dzhavat.bracket-pair-toggler"
+    ]
+}

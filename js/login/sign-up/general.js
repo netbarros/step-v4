@@ -1,0 +1,244 @@
+"use strict";
+
+// Class definition
+var KTSignupGeneral = function() {
+    // Elements
+    var form;
+    var submitButton;
+    var validator;
+    var passwordMeter;
+
+    // Handle form
+    var handleForm  = function(e) {
+        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+        validator = FormValidation.formValidation(
+			form,
+			{
+				fields: {
+					'first-name': {
+						validators: {
+							notEmpty: {
+								message: 'Primeiro Nome, necessário.'
+							}
+						}
+                    },
+                    'last-name': {
+						validators: {
+							notEmpty: {
+                                message: 'Último Nome, necessário.'
+							}
+						}
+					},
+					'email': {
+                        validators: {
+                            regexp: {
+                                regexp: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                message: 'O valor informado não é um e-mail válido.',
+                            },
+							notEmpty: {
+								message: 'E-mail, necesário.'
+							}
+						}
+					},
+                    'password': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Senha, necessária.'
+                            },
+                            callback: {
+                                message: 'Por favor, informe uma senha válida.',
+                                callback: function(input) {
+                                    if (input.value.length > 0) {
+                                        return validatePassword();
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    'confirm-password': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Confirmação de Senha, necessária.'
+                            },
+                            identical: {
+                                compare: function() {
+                                    return form.querySelector('[name="password"]').value;
+                                },
+                                message: 'A Senha não Confere com a Confirmação informada.'
+                            }
+                        }
+                    },
+                    'toc': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Você precisa aceitar os Termos e Condições.'
+                            }
+                        }
+                    }
+				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger({
+                        event: {
+                            password: false
+                        }  
+                    }),
+					bootstrap: new FormValidation.plugins.Bootstrap5({
+                        rowSelector: '.fv-row',
+                        eleInvalidClass: '',  // comment to enable invalid state icons
+                        eleValidClass: '' // comment to enable valid state icons
+                    })
+				}
+			}
+		);
+
+        // Handle form submit
+        submitButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            validator.revalidateField('password');
+
+            validator.validate().then(function(status) {
+		        if (status == 'Valid') {
+                    // Exibir loading indication
+                    submitButton.setAttribute('data-kt-indicator', 'on');
+
+                    // Disable button to avoid multiple click 
+                    submitButton.disabled = true;
+
+
+                    var dados = $("#kt_sign_up_form").serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: "./crud/usuarios/action-usuarios.php",
+                        data: dados,
+                        dataType: "json",
+                        cache: false,
+                        beforeSend: function () {
+
+                            // Exibir loading indication
+                            submitButton.setAttribute('data-kt-indicator', 'on');
+
+                            // Disable button to avoid multiple click
+                            submitButton.disabled = true;
+
+
+                        },
+
+                        success: function (data) {
+
+                            console.log('Senha do Usuário atualizada com Sucesso.');
+
+                            console.log(data);
+
+                            console.log(data.codigo);
+
+                            // Hide loading indication
+                            submitButton.removeAttribute('data-kt-indicator');
+
+                            // Enable button
+                            submitButton.disabled = false;
+
+
+                            if (data.codigo == 1) {
+
+
+
+                                // Exibir message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                                Swal.fire({
+                                    html: "Cadastro Recebido com Sucesso!<p>Por Segurança, sua solicitação será analisada e um de nossos representantes entrará em contato, para ativarmos seu cadastro.",
+                                    icon: "success",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok",
+                                    customClass: {
+                                        confirmButton: "btn btn-primary"
+                                    }
+                                }).then(function (result) {
+                                    if (result.isConfirmed) {
+                                        form.reset();  // reset form                    
+                                        passwordMeter.reset();  // reset password meter
+                                        //form.submit();
+
+                                        //form.submit(); // submit form
+                                        var redirectUrl = form.getAttribute('data-kt-redirect-url');
+                                        if (redirectUrl) {
+                                            location.href = redirectUrl;
+                                        }
+                                    }
+                                });
+
+                            }
+                            if (data.codigo == 0) {
+
+
+                                swal.fire("Ops!", data.retorno, "warning");
+
+
+                            }
+                            e.stopImmediatePropagation();
+
+                        },
+                        error: function (data) {
+
+                            swal.fire("Erro!", "Não foi Possível Prosseguir!" + data.retorno, "error");
+
+                            console.log('Falha no Processamento dos Dados.');
+                            // Remove loading indication
+                            submitButton.removeAttribute('data-kt-indicator');
+
+                            // Enable button
+                            submitButton.disabled = false;
+
+                            e.stopImmediatePropagation();
+
+
+                        }
+
+                    });
+
+                    						
+                } else {
+                    // Exibir error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                    Swal.fire({
+                        text: "Desculpe, parece que alguns erros foram detectados. Tente novamente.",
+                        icon: "error",
+                        buttonsStyling: false,
+                        confirmButtonText: "Ok, farei isso!",
+                        customClass: {
+                            confirmButton: "btn btn-primary"
+                        }
+                    });
+                }
+		    });
+        });
+
+        // Handle password input
+        form.querySelector('input[name="password"]').addEventListener('input', function() {
+            if (this.value.length > 0) {
+                validator.updateFieldStatus('password', 'NotValidated');
+            }
+        });
+    }
+
+    // Password input validation
+    var validatePassword = function() {
+        return (passwordMeter.getScore() === 100);
+    }
+
+    // Public functions
+    return {
+        // Initialization
+        init: function() {
+            // Elements
+            form = document.querySelector('#kt_sign_up_form');
+            submitButton = document.querySelector('#kt_sign_up_submit');
+            passwordMeter = KTPasswordMeter.getInstance(form.querySelector('[data-kt-password-meter="true"]'));
+
+            handleForm ();
+        }
+    };
+}();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTSignupGeneral.init();
+});
